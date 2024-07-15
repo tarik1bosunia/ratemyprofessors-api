@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ professor.name }}</title>
+</head>
+<body>
+    <h1>{{ professor.name }}</h1>
+    <p>Department: {{ professor.department.name }}</p>
+    <p>University: {{ professor.department.university.name }}</p>
+    <p>Overall Rating: {{ overall_rating }}</p>
+    <h2>Courses</h2>
+    <ul>
+        {% for course in courses %}
+        <li><a href="{% url 'course_detail' course.pk %}">{{ course.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'professor_list' %}">Back to list</a>
+</body>
+</html>

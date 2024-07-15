@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Professors</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">Professors</h1>
+
+        <form method="get" action="">
+            <div class="form-group">
+                <input type="text" name="q" class="form-control" placeholder="Search professors by name or university" value="{{ request.GET.q }}">
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+
+        <ul class="list-group my-4">
+            {% for professor in professors %}
+            <li class="list-group-item">
+                <h5>
+                    <a href="{% url 'professor_detail' professor.pk %}">{{ professor.name }}</a>
+                </h5>
+                <p>Department: {{ professor.department.name }}</p>
+                <p>University: {{ professor.department.university.name }}</p>
+                <p>Overall Rating: {{ professor.overall_rating }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

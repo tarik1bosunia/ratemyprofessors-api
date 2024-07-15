@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ course.name }}</title>
+</head>
+<body>
+    <h1>{{ course.name }}</h1>
+    <p>Course Code: {{ course.code }}</p>
+    <h2>Reviews</h2>
+    <ul>
+        {% for review in reviews %}
+        <li>
+            <p>Rating: {{ review.rating }}</p>
+            <p>{{ review.comment }}</p>
+            <p>Tags: {% for tag in review.tags.all %}{{ tag.name }} {% endfor %}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'professor_detail' course.professor.pk %}">Back to professor</a>
+</body>
+</html>

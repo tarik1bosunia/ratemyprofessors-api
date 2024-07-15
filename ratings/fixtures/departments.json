@@ -1,0 +1,12 @@
+[
+  { "model": "ratings.department", "pk": 1, "fields": { "name": "Computer Science" } },
+  { "model": "ratings.department", "pk": 2, "fields": { "name": "Mathematics" } },
+  { "model": "ratings.department", "pk": 3, "fields": { "name": "Physics" } },
+  { "model": "ratings.department", "pk": 4, "fields": { "name": "Biology" } },
+  { "model": "ratings.department", "pk": 5, "fields": { "name": "Chemistry" } },
+  { "model": "ratings.department", "pk": 6, "fields": { "name": "History" } },
+  { "model": "ratings.department", "pk": 7, "fields": { "name": "Economics" } },
+  { "model": "ratings.department", "pk": 8, "fields": { "name": "Engineering" } },
+  { "model": "ratings.department", "pk": 9, "fields": { "name": "Political Science" } },
+  { "model": "ratings.department", "pk": 10, "fields": { "name": "Psychology" } }
+]

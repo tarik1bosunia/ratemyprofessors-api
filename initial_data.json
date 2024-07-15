@@ -1,0 +1,167 @@
+[
+  {
+    "model": "ratings.professor",
+    "pk": 1,
+    "fields": {
+      "name": "John Smith",
+      "department": "Computer Science"
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 2,
+    "fields": {
+      "name": "Jane Doe",
+      "department": "Mathematics"
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 3,
+    "fields": {
+      "name": "Michael Brown",
+      "department": "Physics"
+    }
+  },
+  {
+    "model": "ratings.course",
+    "pk": 1,
+    "fields": {
+      "name": "Introduction to Algorithms",
+      "code": "CS101",
+      "professor": 1
+    }
+  },
+  {
+    "model": "ratings.course",
+    "pk": 2,
+    "fields": {
+      "name": "Linear Algebra",
+      "code": "MA201",
+      "professor": 2
+    }
+  },
+  {
+    "model": "ratings.course",
+    "pk": 3,
+    "fields": {
+      "name": "Electromagnetism",
+      "code": "PH301",
+      "professor": 3
+    }
+  },
+  {
+    "model": "ratings.rating",
+    "pk": 1,
+    "fields": {
+      "course": 1,
+      "rating": 4,
+      "comment": "Great professor, very clear explanations."
+    }
+  },
+  {
+    "model": "ratings.rating",
+    "pk": 2,
+    "fields": {
+      "course": 2,
+      "rating": 5,
+      "comment": "Excellent course, highly recommended!"
+    }
+  },
+  {
+    "model": "ratings.rating",
+    "pk": 3,
+    "fields": {
+      "course": 3,
+      "rating": 3,
+      "comment": "Decent professor, lectures can be a bit dry."
+    }
+  },
+  {
+    "model": "ratings.feedback",
+    "pk": 1,
+    "fields": {
+      "professor": 1,
+      "would_take_again": true,
+      "level_of_difficulty": 2.5
+    }
+  },
+  {
+    "model": "ratings.feedback",
+    "pk": 2,
+    "fields": {
+      "professor": 2,
+      "would_take_again": false,
+      "level_of_difficulty": 3.0
+    }
+  },
+  {
+    "model": "ratings.feedback",
+    "pk": 3,
+    "fields": {
+      "professor": 3,
+      "would_take_again": true,
+      "level_of_difficulty": 4.0
+    }
+  },
+  {
+    "model": "ratings.tag",
+    "pk": 1,
+    "fields": {
+      "professor": 1,
+      "tag": "Knowledgeable"
+    }
+  },
+  {
+    "model": "ratings.tag",
+    "pk": 2,
+    "fields": {
+      "professor": 2,
+      "tag": "Engaging"
+    }
+  },
+  {
+    "model": "ratings.tag",
+    "pk": 3,
+    "fields": {
+      "professor": 3,
+      "tag": "Approachable"
+    }
+  },
+  {
+    "model": "ratings.school",
+    "pk": 1,
+    "fields": {
+      "name": "University of Example",
+      "country": "United States",
+      "state": "California",
+      "city": "Los Angeles",
+      "website": "https://www.example.edu",
+      "email": "info@example.edu"
+    }
+  },
+  {
+    "model": "ratings.school",
+    "pk": 2,
+    "fields": {
+      "name": "Example University",
+      "country": "United Kingdom",
+      "state": "London",
+      "city": "London",
+      "website": "https://www.example.ac.uk",
+      "email": "info@example.ac.uk"
+    }
+  },
+  {
+    "model": "ratings.school",
+    "pk": 3,
+    "fields": {
+      "name": "Universidad de Ejemplo",
+      "country": "Spain",
+      "state": "Madrid",
+      "city": "Madrid",
+      "website": "https://www.ejemplo.es",
+      "email": "info@ejemplo.es"
+    }
+  }
+]

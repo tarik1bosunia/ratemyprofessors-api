@@ -1,0 +1,6 @@
+[
+  { "model": "ratings.state", "pk": 1, "fields": { "name": "California", "country": 1 } },
+  { "model": "ratings.state", "pk": 2, "fields": { "name": "New York", "country": 1 } },
+  { "model": "ratings.state", "pk": 3, "fields": { "name": "London", "country": 2 } },
+  { "model": "ratings.state", "pk": 4, "fields": { "name": "Madrid", "country": 3 } }
+]

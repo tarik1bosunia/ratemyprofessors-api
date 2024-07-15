@@ -1,0 +1,26 @@
+[
+  {
+    "model": "ratings.country",
+    "pk": 1,
+    "fields": {
+      "name": "United States",
+      "code": "US"
+    }
+  },
+  {
+    "model": "ratings.country",
+    "pk": 2,
+    "fields": {
+      "name": "United Kingdom",
+      "code": "GB"
+    }
+  },
+  {
+    "model": "ratings.country",
+    "pk": 3,
+    "fields": {
+      "name": "Spain",
+      "code": "ES"
+    }
+  }
+]

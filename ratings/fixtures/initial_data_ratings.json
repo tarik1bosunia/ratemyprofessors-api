@@ -1,0 +1,23 @@
+[
+  { "model": "ratings.country", "pk": 1, "fields": { "name": "United States", "code": "US" } },
+  { "model": "ratings.country", "pk": 2, "fields": { "name": "United Kingdom", "code": "GB" } },
+  { "model": "ratings.country", "pk": 3, "fields": { "name": "Spain", "code": "ES" } },
+
+  { "model": "ratings.state", "pk": 1, "fields": { "name": "California", "country": 1 } },
+  { "model": "ratings.state", "pk": 2, "fields": { "name": "New York", "country": 1 } },
+  { "model": "ratings.state", "pk": 3, "fields": { "name": "London", "country": 2 } },
+  { "model": "ratings.state", "pk": 4, "fields": { "name": "Madrid", "country": 3 } },
+
+  { "model": "ratings.department", "pk": 1, "fields": { "name": "Computer Science" } },
+  { "model": "ratings.department", "pk": 2, "fields": { "name": "Mathematics" } },
+
+  { "model": "ratings.school", "pk": 1, "fields": { "name_of_school": "Harvard University", "school_website": "https://www.harvard.edu", "location": "Cambridge, MA", "country": 1, "state": 1, "terms_privacy": true } },
+  { "model": "ratings.school", "pk": 2, "fields": { "name_of_school": "Stanford University", "school_website": "https://www.stanford.edu", "location": "Stanford, CA", "country": 1, "state": 1, "terms_privacy": true } },
+  { "model": "ratings.school", "pk": 3, "fields": { "name_of_school": "University of Oxford", "school_website": "https://www.ox.ac.uk", "location": "Oxford, England", "country": 2, "state": 3, "terms_privacy": true } },
+  { "model": "ratings.school", "pk": 4, "fields": { "name_of_school": "University of Madrid", "school_website": "https://www.ucm.es", "location": "Madrid, Spain", "country": 3, "state": 4, "terms_privacy": true } },
+
+  { "model": "ratings.professor", "pk": 1, "fields": { "name_of_school": "Harvard University", "first_name": "John", "middle_name": "A", "last_name": "Doe", "department": 1, "directory_listing_of_professor": "https://www.harvard.edu/faculty/john-doe", "terms_privacy": true } },
+  { "model": "ratings.professor", "pk": 2, "fields": { "name_of_school": "Stanford University", "first_name": "Jane", "middle_name": "B", "last_name": "Smith", "department": 2, "directory_listing_of_professor": "https://www.stanford.edu/faculty/jane-smith", "terms_privacy": true } },
+  { "model": "ratings.professor", "pk": 3, "fields": { "name_of_school": "University of Oxford", "first_name": "Alice", "middle_name": "C", "last_name": "Johnson", "department": 1, "directory_listing_of_professor": "https://www.ox.ac.uk/faculty/alice-johnson", "terms_privacy": true } },
+  { "model": "ratings.professor", "pk": 4, "fields": { "name_of_school": "University of Madrid", "first_name": "Bob", "middle_name": "D", "last_name": "Williams", "department": 2, "directory_listing_of_professor": "https://www.ucm.es/faculty/bob-williams", "terms_privacy": true } }
+]
