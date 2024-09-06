@@ -58,6 +58,9 @@ INSTALLED_APPS = [
 
     # social auth
     'social_django',
+
+    # deploy
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
