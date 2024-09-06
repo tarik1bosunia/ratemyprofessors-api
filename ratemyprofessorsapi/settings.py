@@ -47,12 +47,17 @@ INSTALLED_APPS = [
     'account',
     'ratings',
     'search',
+    'social_auth',
+    'content',
 
     'corsheaders',
 
     # rest framework
     'rest_framework',
     'rest_framework_simplejwt',
+
+    # social auth
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -219,3 +224,20 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3000",
 ]
 CORS_ALLOW_CREDENTIALS = True
+
+GOOGLE_CLIENT_ID = '573678907891-8b1nrjprjdqhjgoqkmnseu81jt033ohe.apps.googleusercontent.com'
+GOOGLE_CLIENT_SECRET = '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'
+SOCIAL_AUTH_PASSWORD = 'randomstring'
+
+# social auth
+# SOCIAL_AUTH_JSONFIELD_ENABLED = True
+
+# AUTHENTICATION_BACKENDS = (
+#     'social_core.backends.open_id.OpenIdAuth',
+#     'social_core.backends.google.GoogleOpenId',
+#     'social_core.backends.google.GoogleOAuth2',
+#     'social_core.backends.google.GoogleOAuth',
+#     'social_core.backends.twitter.TwitterOAuth',
+#     'social_core.backends.yahoo.YahooOpenId',
+#     'django.contrib.auth.backends.ModelBackend',
+# )

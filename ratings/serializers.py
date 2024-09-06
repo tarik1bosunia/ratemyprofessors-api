@@ -1,5 +1,5 @@
 # ratings/serializers.py
-
+from django.db.models import Avg
 from rest_framework import serializers
 from .models import Professor, Course, Rating, Feedback, ProfessorsTag, School, State, Country, Department, \
     SchoolRating, ProfessorRating
@@ -91,3 +91,17 @@ class ProfessorRatingSerializer(serializers.ModelSerializer):
             'was_use_textbook', 'was_attendance_mandatory', 'grade',
             'tags', 'comment'
         ]
+
+
+class SimilarProfessorSerializer(serializers.ModelSerializer):
+    average_rating = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Professor
+        fields = ['id', 'first_name', 'last_name', 'average_rating']
+
+    def get_average_rating(self, obj):
+        ratings = ProfessorRating.objects.filter(professor=obj)
+        if ratings.exists():
+            return ratings.aggregate(Avg('rating'))['rating__avg']
+        return None

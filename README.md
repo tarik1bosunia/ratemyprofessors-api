@@ -22,3 +22,12 @@ https://dev.to/azayshrestha/enhance-your-searches-with-postgresql-trigram-simila
 sudo -u postgres psql -d database_name -c "CREATE EXTENSION IF NOT EXISTS pg_trgm;
 
 https://testdriven.io/blog/django-drf-elasticsearch/
+
+# login with google
+pip install google-api-python-client
+pip install social-auth-app-django
+pip install --upgrade google-auth google-auth-oauthlib google-auth-httplib2
+
+https://developers.google.com/identity/sign-in/web/server-side-flow
+
+python manage.py loaddata content_initial_data.json

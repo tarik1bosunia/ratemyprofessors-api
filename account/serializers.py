@@ -61,7 +61,7 @@ class UserUpdatePersonalInfoSerializer(serializers.ModelSerializer):
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'email', 'name']
+        fields = ['id', 'email', 'first_name', 'last_name', 'school', 'field_of_study']
 
 
 class UserChangePasswordSerializer(serializers.Serializer):

@@ -107,12 +107,22 @@ class SchoolRating(models.Model):
     comment = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f'{self.school.name_of_school}'
+
 
 class ProfessorRating(models.Model):
+    RATING_CHOICES = [
+        (1, 'Awful'),
+        (2, 'Ok'),
+        (3, 'Good'),
+        (4, 'Great'),
+        (5, 'Awesome'),
+    ]
     professor = models.ForeignKey(Professor, on_delete=models.CASCADE)
     course_code = models.CharField(max_length=100)
     is_online_course = models.BooleanField(default=False)
-    rating = models.IntegerField()
+    rating = models.IntegerField(choices=RATING_CHOICES)
     difficulty = models.IntegerField()
     is_take_professor_again = models.BooleanField()
     was_class_taken_for_credit = models.BooleanField(null=True, blank=True)

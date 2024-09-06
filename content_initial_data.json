@@ -1,0 +1,60 @@
+[
+    {
+        "model": "content.content",
+        "pk": 1,
+        "fields": {
+            "title": "Understanding Django REST Framework",
+            "body": "This content explains how to use Django REST Framework.",
+            "user": 1,
+            "created_at": "2024-08-01T12:00:00Z"
+        }
+    },
+    {
+        "model": "content.content",
+        "pk": 2,
+        "fields": {
+            "title": "Next.js for Beginners",
+            "body": "An introductory guide to using Next.js for building web applications.",
+            "user": 1,
+            "created_at": "2024-08-02T15:00:00Z"
+        }
+    },
+    {
+        "model": "content.comment",
+        "pk": 1,
+        "fields": {
+            "content": 1,
+            "user": 2,
+            "body": "Great article on Django REST Framework!",
+            "created_at": "2024-08-03T10:00:00Z"
+        }
+    },
+    {
+        "model": "content.comment",
+        "pk": 2,
+        "fields": {
+            "content": 2,
+            "author": 3,
+            "body": "This guide on Next.js is very helpful!",
+            "created_at": "2024-08-04T11:00:00Z"
+        }
+    },
+    {
+        "model": "content.like",
+        "pk": 1,
+        "fields": {
+            "content": 1,
+            "user": 2,
+            "created_at": "2024-08-05T08:00:00Z"
+        }
+    },
+    {
+        "model": "content.like",
+        "pk": 2,
+        "fields": {
+            "content": 2,
+            "user": 3,
+            "created_at": "2024-08-06T09:00:00Z"
+        }
+    }
+]

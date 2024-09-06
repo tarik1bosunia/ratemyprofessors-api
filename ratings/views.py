@@ -10,7 +10,7 @@ from .models import Professor, Course, Rating, Feedback, ProfessorsTag, School, 
 from .serializers import ProfessorSerializer, CourseSerializer, RatingSerializer, FeedbackSerializer, \
     ProfessorsTagSerializer, \
     SchoolSerializer, CountrySerializer, StateSerializer, DepartmentSerializer, SchoolRatingSerializer, \
-    ProfessorRatingSerializer
+    ProfessorRatingSerializer, SimilarProfessorSerializer
 
 from rest_framework import generics, pagination
 from rest_framework.permissions import IsAuthenticated, AllowAny, IsAuthenticatedOrReadOnly
@@ -19,7 +19,7 @@ from rest_framework.decorators import action
 
 from account.renderers import UserRenderer
 
-from django.db.models import Q
+from django.db.models import Q, Avg, Count
 
 from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector, TrigramSimilarity, TrigramDistance, \
     SearchHeadline
@@ -153,7 +153,6 @@ class RateProfessorView(generics.CreateAPIView):
         # Extract the professor_id from the URL
         professor_id = kwargs.get('professor_id')
 
-
         # Ensure the professor exists
         try:
             professor = Professor.objects.get(id=professor_id)
@@ -179,3 +178,69 @@ class RateProfessorView(generics.CreateAPIView):
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
 
+
+# get a professor ratings by his/her id
+class ProfessorRatingsView(generics.ListAPIView):
+    serializer_class = ProfessorRatingSerializer
+
+    def get_queryset(self):
+        # Extract the professor_id from the URL
+        professor_id = self.kwargs.get('professor_id')
+
+        # Ensure the professor exists
+        try:
+            professor = Professor.objects.get(id=professor_id)
+        except Professor.DoesNotExist:
+            return Response({"error": "Professor not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        # Return all ratings for the professor
+        return ProfessorRating.objects.filter(professor=professor)
+
+    def get(self, request, *args, **kwargs):
+        # Get the queryset using the get_queryset method
+        queryset = self.get_queryset()
+
+        # Count how many ratings exist
+        total_ratings_count = queryset.count()
+
+        # Count how many times is_take_professor_again is True
+        take_again_count = queryset.filter(is_take_professor_again=True).count()
+
+        # Calculate the average level of difficulty
+        avg_difficulty = queryset.aggregate(Avg('difficulty'))['difficulty__avg']
+
+        # Get the top 5 most common tags
+        top_tags = ProfessorRating.objects.filter(professor__id=self.kwargs.get('professor_id')).values('tags__tag')\
+            .annotate(tag_count=Count('tags'))\
+            .order_by('-tag_count')[:5]
+
+        # Count how many times each rating appears
+        rating_counts = queryset.values('rating').annotate(count=Count('rating')).order_by('rating')
+
+        # Calculate the percentage of take_again_count
+        take_again_percentage = int((take_again_count / total_ratings_count * 100) if total_ratings_count > 0 else 0)
+
+        # Serialize the data
+        serializer = self.get_serializer(queryset, many=True)
+
+        # Return the serialized data along with the count
+        return Response({
+            "ratings": serializer.data,
+            "total_ratings_count": total_ratings_count,
+            "take_again_count": take_again_count,
+            "avg_difficulty": f"{avg_difficulty:.2f}",
+            "top_tags": list(top_tags),
+            "rating_counts": list(rating_counts),
+            "take_again_percentage": take_again_percentage,
+
+        })
+
+
+class SimilarProfessorsView(generics.ListAPIView):
+    serializer_class = SimilarProfessorSerializer
+
+    def get_queryset(self):
+        professor_id = self.kwargs.get('professor_id')
+        professor = get_object_or_404(Professor, id=professor_id)
+        # Get professors in the same department, excluding the current professor
+        return Professor.objects.filter(department=professor.department).exclude(id=professor_id)

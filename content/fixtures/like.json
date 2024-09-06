@@ -1,0 +1,20 @@
+[
+    {
+        "model": "content.like",
+        "pk": 1,
+        "fields": {
+            "content": 1,
+            "user": 1,
+            "created_at": "2024-08-01T10:00:00Z"
+        }
+    },
+    {
+        "model": "content.like",
+        "pk": 2,
+        "fields": {
+            "content": 2,
+            "user": 2,
+            "created_at": "2024-08-02T12:00:00Z"
+        }
+    }
+]

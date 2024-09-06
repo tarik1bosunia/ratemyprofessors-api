@@ -20,6 +20,9 @@ class UserManager(BaseUserManager):
         return self.create_user(email, password, **extra_fields)
 
 
+AUTH_PROVIDERS = {'email': 'email', 'google': 'google', 'github': 'github', 'facebook': 'facebook'}
+
+
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True, verbose_name="Email", max_length=255)
     first_name = models.CharField(max_length=200, null=True, blank=True)
@@ -33,6 +36,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    auth_provider = models.CharField(max_length=50, default=AUTH_PROVIDERS.get('email'))
+
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
@@ -41,6 +46,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.email
 
+    @property
     def get_full_name(self):
         return f'{self.first_name} {self.last_name}'
 

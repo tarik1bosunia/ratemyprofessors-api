@@ -2,8 +2,9 @@
 
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import ProfessorListAPIView, ProfessorCreateAPIView, CourseViewSet, RatingViewSet, FeedbackViewSet, \
-    TagViewSet, CountryViewSet, StateViewSet, SchoolViewSet, DepartmentViewSet, SchoolRatingAPIView, RateProfessorView
+from .views import (ProfessorListAPIView, ProfessorCreateAPIView, CourseViewSet, RatingViewSet, FeedbackViewSet,
+                    TagViewSet, CountryViewSet, StateViewSet, SchoolViewSet, DepartmentViewSet, SchoolRatingAPIView,
+                    RateProfessorView, ProfessorRatingsView, SimilarProfessorsView)
 
 router = DefaultRouter()
 router.register(r'courses', CourseViewSet)
@@ -15,7 +16,6 @@ router.register(r'states', StateViewSet)
 router.register(r'schools', SchoolViewSet)
 router.register(r'departments', DepartmentViewSet)
 
-
 urlpatterns = [
     path('', include(router.urls)),
     path('states/by_country/', StateViewSet.as_view({'get': 'by_country'}), name='states-by-country'),
@@ -24,4 +24,7 @@ urlpatterns = [
     path('school-rating/<int:school_id>/', SchoolRatingAPIView.as_view(), name='school-rating'),
     path('school-rating/<int:school_id>/<int:rating_id>/', SchoolRatingAPIView.as_view()),
     path('professor-rating/<int:professor_id>/', RateProfessorView.as_view(), name='rate-professor'),
+    path('professors/<int:professor_id>/', ProfessorRatingsView.as_view(), name='professor-details'),
+    path('professors/<int:professor_id>/similar/', SimilarProfessorsView.as_view(), name='similar-professors'),
+
 ]
