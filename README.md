@@ -5,6 +5,10 @@ pip install django-dotenv
 python .\manage.py loaddata departments.json
 
 # postgres SQL
+### ubuntu
+ sudo su - postgres
+ psql
+
 pip install psycopg2
 CREATE DATABASE ratemyprofessorsdb;
 \l
