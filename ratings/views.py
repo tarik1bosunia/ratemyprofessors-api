@@ -220,15 +220,20 @@ class ProfessorRatingsView(generics.ListAPIView):
         # Calculate the percentage of take_again_count
         take_again_percentage = int((take_again_count / total_ratings_count * 100) if total_ratings_count > 0 else 0)
 
+        # Serialize the professor
+        professor = Professor.objects.get(id=self.kwargs.get('professor_id'))
+        professor_serializer = ProfessorSerializer(professor)
+
         # Serialize the data
         serializer = self.get_serializer(queryset, many=True)
 
         # Return the serialized data along with the count
         return Response({
+            "professor": professor_serializer.data,
             "ratings": serializer.data,
             "total_ratings_count": total_ratings_count,
             "take_again_count": take_again_count,
-            "avg_difficulty": f"{avg_difficulty:.2f}",
+            "avg_difficulty": f"{avg_difficulty:.2f}" if avg_difficulty is not None else "N/A",
             "top_tags": list(top_tags),
             "rating_counts": list(rating_counts),
             "take_again_percentage": take_again_percentage,

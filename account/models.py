@@ -47,6 +47,16 @@ class User(AbstractBaseUser, PermissionsMixin):
         return self.email
 
     @property
+    def is_professor(self):
+        return hasattr(self, 'professor_profile') and self.professor_profile is not None
+
+    # if user.is_professor:
+    #     # User is a professor
+    #     professor_profile = user.professor_profile
+    # else:
+    #     # User is not a professor
+
+    @property
     def get_full_name(self):
         return f'{self.first_name} {self.last_name}'
 

@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-_=yyzx72vvzwrngajm&p@i4o5gqckk#0t*(xy9o_nk!9s-%yi(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ratemyprofessor.ru.ac.bd', '103.99.176.145']
+ALLOWED_HOSTS = ['ratemyprofessor.ru.ac.bd', '103.99.176.145', '127.0.0.1']
 
 
 # Application definition
@@ -105,17 +105,6 @@ WSGI_APPLICATION = 'ratemyprofessorsapi.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": "ratemyprofessorsdb",
-#         "USER": "tata",
-#         "PASSWORD": "11235813",
-#         "HOST": "127.0.0.1",
-#         "PORT": "5433",
-#     }
-# }
-
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
@@ -123,7 +112,7 @@ DATABASES = {
         "USER": "tata",
         "PASSWORD": "11235813",
         "HOST": "127.0.0.1",
-        "PORT": "5432",
+        "PORT": "5433",
     }
 }
 

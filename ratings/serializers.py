@@ -35,6 +35,7 @@ class ProfessorSerializer(serializers.ModelSerializer):
     # courses = CourseSerializer(many=True, read_only=True)
     # feedback = FeedbackSerializer(many=True, read_only=True)
     # tags = TagSerializer(many=True, read_only=True)
+    department = serializers.StringRelatedField()
 
     class Meta:
         model = Professor
@@ -81,7 +82,7 @@ class SchoolRatingSerializer(serializers.ModelSerializer):
 
 class ProfessorRatingSerializer(serializers.ModelSerializer):
     professor = serializers.PrimaryKeyRelatedField(queryset=Professor.objects.all())
-    tags = serializers.PrimaryKeyRelatedField(many=True, queryset=ProfessorsTag.objects.all())
+    tags = serializers.SlugRelatedField(many=True, queryset=ProfessorsTag.objects.all(), slug_field='tag')
 
     class Meta:
         model = ProfessorRating
@@ -89,7 +90,7 @@ class ProfessorRatingSerializer(serializers.ModelSerializer):
             'professor', 'course_code', 'is_online_course', 'rating', 'difficulty',
             'is_take_professor_again', 'was_class_taken_for_credit',
             'was_use_textbook', 'was_attendance_mandatory', 'grade',
-            'tags', 'comment'
+            'tags', 'comment', 'created_at'
         ]
 
 
