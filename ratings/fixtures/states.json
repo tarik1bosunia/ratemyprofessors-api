@@ -2,5 +2,13 @@
   { "model": "ratings.state", "pk": 1, "fields": { "name": "California", "country": 1 } },
   { "model": "ratings.state", "pk": 2, "fields": { "name": "New York", "country": 1 } },
   { "model": "ratings.state", "pk": 3, "fields": { "name": "London", "country": 2 } },
-  { "model": "ratings.state", "pk": 4, "fields": { "name": "Madrid", "country": 3 } }
+  { "model": "ratings.state", "pk": 4, "fields": { "name": "Madrid", "country": 3 } },
+  { "model": "ratings.state", "pk": 5, "fields": { "name": "Dhaka", "country": 1 } },
+  { "model": "ratings.state", "pk": 6, "fields": { "name": "Chittagong", "country": 1 } },
+  { "model": "ratings.state", "pk": 7, "fields": { "name": "Khulna", "country": 1 } },
+  { "model": "ratings.state", "pk": 8, "fields": { "name": "Rajshahi", "country": 1 } },
+  { "model": "ratings.state", "pk": 9, "fields": { "name": "Barisal", "country": 1 } },
+  { "model": "ratings.state", "pk": 10, "fields": { "name": "Sylhet", "country": 1 } },
+  { "model": "ratings.state", "pk": 11, "fields": { "name": "Rangpur", "country": 1 } },
+  { "model": "ratings.state", "pk": 12, "fields": { "name": "Mymensingh", "country": 1 } }
 ]

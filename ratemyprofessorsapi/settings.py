@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'search',
     'social_auth',
     'content',
+    'utils',
 
     'corsheaders',
 
@@ -61,6 +62,7 @@ INSTALLED_APPS = [
 
     # deploy
     'django_extensions',
+
 ]
 
 MIDDLEWARE = [
@@ -72,6 +74,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # Custom middleware
+    'utils.middleware.LogRequestMiddleware',  # Register the custom middleware here
 ]
 
 ROOT_URLCONF = 'ratemyprofessorsapi.urls'
@@ -244,3 +249,26 @@ SOCIAL_AUTH_PASSWORD = os.environ.get('SOCIAL_AUTH_PASSWORD')
 #     'social_core.backends.yahoo.YahooOpenId',
 #     'django.contrib.auth.backends.ModelBackend',
 # )
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'INFO',  # Adjust the level if needed
+            'class': 'logging.FileHandler',
+            'filename': 'api_requests.log',  # Log to a file
+        },
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'utils.middleware': {  # This should match the name used in your middleware file
+            'handlers': ['file', 'console'],  # Use both file and console for output
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
+}

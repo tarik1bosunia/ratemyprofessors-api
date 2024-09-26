@@ -14,3 +14,18 @@ server {
         proxy_pass http://unix:/run/gunicorn_ratemyprofessors.sock;
     }
 }
+gunicorn_ratemyprofessorsapi.socket
+[Unit]
+Description=gunicorn socket for ratemyprofessorsapi                                                                                                                                                                                             [Socket]
+ListenStream=/run/gunicorn_ratemyprofessorsapi.sock                                                                     
+[Install]
+WantedBy=sockets.target
+
+gunicorn_ratemyprofessorsapi.service
+[Service]
+User=tata                                                                                                               Group=www-data                                                                                                          WorkingDirectory=/home/tata/rateteachapi
+ExecStart=/home/tata/ratemyprofessorsapi/venv/bin/gunicorn \
+          --access-logfile - \
+          --workers 3 \                                                                                                           --bind unix:/run/gunicorn_ratemyprofessorsapi.sock \
+          ratemyprofessorsapi.wsgi:application                                                                                                                                                                                                  [Install]
+WantedBy=multi-user.target

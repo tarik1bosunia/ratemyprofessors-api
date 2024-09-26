@@ -22,5 +22,13 @@
       "name": "Spain",
       "code": "ES"
     }
+  },
+  {
+    "model": "ratings.country",
+    "pk": 4,
+    "fields": {
+      "name": "Bangladesh",
+      "code": "BD"
+    }
   }
 ]
