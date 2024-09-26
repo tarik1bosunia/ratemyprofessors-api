@@ -17,7 +17,7 @@ class Department(models.Model):
 
 
 class Professor(models.Model):
-    user = models.OneToOneField(User, on_delete=models.SET_NULL, related_name='professor_profile', null=True, blank=True)
+    user = models.OneToOneField(User, on_delete=models.SET_NULL, related_name='professor', null=True, blank=True)
     name_of_school = models.CharField(max_length=100)
     first_name = models.CharField(max_length=100)
     middle_name = models.CharField(max_length=100, blank=True, null=True)
@@ -28,6 +28,8 @@ class Professor(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+
+
 
 
 class Course(models.Model):

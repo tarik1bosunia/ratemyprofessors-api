@@ -35,7 +35,7 @@ class ProfessorSerializer(serializers.ModelSerializer):
     # courses = CourseSerializer(many=True, read_only=True)
     # feedback = FeedbackSerializer(many=True, read_only=True)
     # tags = TagSerializer(many=True, read_only=True)
-    department = serializers.StringRelatedField()
+    department = serializers.PrimaryKeyRelatedField(queryset=Department.objects.all())
 
     class Meta:
         model = Professor

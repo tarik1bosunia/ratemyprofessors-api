@@ -45,9 +45,11 @@ class ProfessorCreateAPIView(generics.CreateAPIView):
     permission_classes = [IsAuthenticated]
 
     def create(self, request, *args, **kwargs):
-        print(request.headers)  # Print headers to check if the token is being sent
+        print("Request Data:", request.data)
+        print("Request Headers:", request.headers)
+        if 'department' not in request.data:
+            print("Department is missing from request data")
         return super().create(request, *args, **kwargs)
-
 
 class CourseViewSet(viewsets.ModelViewSet):
     queryset = Course.objects.all()

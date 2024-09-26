@@ -37,6 +37,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     updated_at = models.DateTimeField(auto_now=True)
 
     auth_provider = models.CharField(max_length=50, default=AUTH_PROVIDERS.get('email'))
+    is_email_verified = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
@@ -46,9 +47,9 @@ class User(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         return self.email
 
-    @property
-    def is_professor(self):
-        return hasattr(self, 'professor_profile') and self.professor_profile is not None
+    # @property
+    # def is_professor(self):
+    #     return hasattr(self, 'professor_profile') and self.professor_profile is not None
 
     # if user.is_professor:
     #     # User is a professor

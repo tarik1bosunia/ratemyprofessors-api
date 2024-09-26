@@ -7,6 +7,7 @@ from .models import (
     ProfessorRating
 )
 
+
 @admin.register(Department)
 class DepartmentAdmin(admin.ModelAdmin):
     list_display = ('name',)
@@ -79,7 +80,6 @@ class ProfessorRatingAdmin(admin.ModelAdmin):
     list_display = ('professor', 'course_code', 'rating', 'difficulty', 'is_online_course', 'is_take_professor_again')
     search_fields = ('professor__first_name', 'professor__last_name', 'course_code', 'comment')
     list_filter = ('rating', 'difficulty', 'is_online_course', 'is_take_professor_again')
-
 
 # from django.contrib import admin
 # from .models import (Professor, Course, Rating, Feedback, ProfessorsTag, School,
