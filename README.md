@@ -14,7 +14,7 @@ CREATE DATABASE ratemyprofessorsdb;
 \l
 \c ratemyprofessorsdb
 CREATE USER tata WITH PASSWORD '11235813';
-CREATE SCHEMA ratemyprofessorsdb AUTHORIZATION tata;
+CREATE SCHEMA ratemyprofessorsdbschema AUTHORIZATION tata;
 ALTER ROLE tata SET client_encoding TO 'utf8';
 ALTER ROLE tata SET default_transaction_isolation TO 'read committed';
 ALTER ROLE tata SET timezone TO 'UTC';

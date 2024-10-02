@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    # "whitenoise.runserver_nostatic",  # for development mode not use whitenoise
     'django.contrib.staticfiles',
     'django.contrib.postgres',
 
@@ -67,6 +68,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    "whitenoise.middleware.WhiteNoiseMiddleware",  # whitenoise
     'django.contrib.sessions.middleware.SessionMiddleware',
     "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
@@ -110,14 +112,25 @@ WSGI_APPLICATION = 'ratemyprofessorsapi.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "ratemyprofessorsdb",
+#         "USER": "tata",
+#         "PASSWORD": "11235813",
+#         "HOST": "127.0.0.1",
+#         "PORT": "5433",
+#     }
+# }
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "ratemyprofessorsdb",
-        "USER": "tata",
-        "PASSWORD": "11235813",
-        "HOST": "127.0.0.1",
-        "PORT": "5433",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'rtdb',  # Matches POSTGRES_DB
+        'USER': 'postgres',  # Matches POSTGRES_USER
+        'PASSWORD': os.getenv('DB_PASSWORD', 'my_secret_password'),  # Load from env variable or leave as an empty string
+        'HOST': 'db',  # Docker service name
+        'PORT': '5432',  # PostgreSQL default port
     }
 }
 
@@ -157,10 +170,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'static'
-# STATICFILES_DIRS = [
-#     BASE_DIR / "static",
-# ]
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# whitenoise
+STORAGES = {
+    # ...
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -254,11 +278,11 @@ LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'handlers': {
-        'file': {
-            'level': 'INFO',  # Adjust the level if needed
-            'class': 'logging.FileHandler',
-            'filename': 'api_requests.log',  # Log to a file
-        },
+        # 'file': {
+        #     'level': 'INFO',  # Adjust the level if needed
+        #     'class': 'logging.FileHandler',
+        #     'filename': 'api_requests.log',  # Log to a file
+        # },
         'console': {
             'level': 'INFO',
             'class': 'logging.StreamHandler',
@@ -266,7 +290,8 @@ LOGGING = {
     },
     'loggers': {
         'utils.middleware': {  # This should match the name used in your middleware file
-            'handlers': ['file', 'console'],  # Use both file and console for output
+            # 'handlers': ['file', 'console'],  # Use both file and console for output
+            'handlers': ['console'],  # Use both file and console for output
             'level': 'INFO',
             'propagate': True,
         },
