@@ -17,6 +17,7 @@ services:
       context: .
     volumes:
       - .:/app
+      - ./staticfiles:/app/staticfiles
     env_file:
       - ./.env
     ports:

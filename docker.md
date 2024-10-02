@@ -1,6 +1,7 @@
 docker init
 pip install whitenoise
 python .\manage.py collectstatic
+docker-compose exec django python manage.py collectstatic --noinput
 docker-compose exec server python manage.py migrate
 docker-compose exec server python manage.py createsuperuser
 
