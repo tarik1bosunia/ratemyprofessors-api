@@ -28,8 +28,8 @@ SECRET_KEY = 'django-insecure-_=yyzx72vvzwrngajm&p@i4o5gqckk#0t*(xy9o_nk!9s-%yi(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ratemyprofessor.ru.ac.bd', '103.99.176.145', '127.0.0.1', 'localhost']
-CSRF_TRUSTED_ORIGINS = ['https://ratemyprofessor.ru.ac.bd']
+ALLOWED_HOSTS = ['ratemyprofessor.ru.ac.bd', 'apirateteach.ru.ac.bd', '103.99.176.145', '127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://ratemyprofessor.ru.ac.bd', 'https://apirateteach.ru.ac.bd']
 
 
 # Application definition
