@@ -44,7 +44,7 @@ class FeedbackAdmin(admin.ModelAdmin):
 
 @admin.register(ProfessorsTag)
 class ProfessorsTagAdmin(admin.ModelAdmin):
-    list_display = ('tag',)
+    list_display = ('id', 'tag',)
     search_fields = ('tag',)
 
 

@@ -52,5 +52,9 @@ COPY . .
 EXPOSE 8000
 
 
-# Run the application and apply migrations automatically.
-CMD python manage.py migrate && gunicorn 'ratemyprofessorsapi.wsgi' --bind=0.0.0.0:8000
+
+# Run the application:
+# 1. Apply migrations
+# 2. Conditionally load the countries and states data (if they don't exist)
+# 3. Start the Gunicorn server
+CMD python manage.py migrate && python manage.py account_initial_data && python manage.py ratings_initial_data && gunicorn 'ratemyprofessorsapi.wsgi' --bind=0.0.0.0:8000

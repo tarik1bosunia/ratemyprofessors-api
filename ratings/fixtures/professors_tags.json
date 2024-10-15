@@ -1,0 +1,142 @@
+[
+  {
+    "model": "ratings.professorstag",
+    "pk": 1,
+    "fields": {
+      "tag": "Tough Grader"
+    }
+  },
+  {
+    "model": "ratings.professorstag",
+    "pk": 2,
+    "fields": {
+      "tag": "Get Ready To Read"
+    }
+  },
+  {
+    "model": "ratings.professorstag",
+    "pk": 3,
+    "fields": {
+      "tag": "Participation Matters"
+    }
+  },
+  {
+    "model": "ratings.professorstag",
+    "pk": 4,
+    "fields": {
+      "tag": "Extra Credit"
+    }
+  },
+  {
+    "model": "ratings.professorstag",
+    "pk": 5,
+    "fields": {
+      "tag": "Group Projects"
+    }
+  },
+  {
+    "model": "ratings.professorstag",
+    "pk": 6,
+    "fields": {
+      "tag": "Amazing Lectures"
+    }
+  },
+  {
+    "model": "ratings.professorstag",
+    "pk": 7,
+    "fields": {
+      "tag": "Clear Grading Criteria"
+    }
+  },
+  {
+    "model": "ratings.professorstag",
+    "pk": 8,
+    "fields": {
+      "tag": "Gives Good Feedback"
+    }
+  },
+  {
+    "model": "ratings.professorstag",
+    "pk": 9,
+    "fields": {
+      "tag": "Inspirational"
+    }
+  },
+  {
+    "model": "ratings.professorstag",
+    "pk": 10,
+    "fields": {
+      "tag": "Lots Of Homework"
+    }
+  },
+  {
+    "model": "ratings.professorstag",
+    "pk": 11,
+    "fields": {
+      "tag": "Hilarious"
+    }
+  },
+  {
+    "model": "ratings.professorstag",
+    "pk": 12,
+    "fields": {
+      "tag": "Beware Of Pop Quizzes"
+    }
+  },
+  {
+    "model": "ratings.professorstag",
+    "pk": 13,
+    "fields": {
+      "tag": "So Many Papers"
+    }
+  },
+  {
+    "model": "ratings.professorstag",
+    "pk": 14,
+    "fields": {
+      "tag": "Caring"
+    }
+  },
+  {
+    "model": "ratings.professorstag",
+    "pk": 15,
+    "fields": {
+      "tag": "Respected"
+    }
+  },
+  {
+    "model": "ratings.professorstag",
+    "pk": 16,
+    "fields": {
+      "tag": "Lecture Heavy"
+    }
+  },
+  {
+    "model": "ratings.professorstag",
+    "pk": 17,
+    "fields": {
+      "tag": "Test Heavy"
+    }
+  },
+  {
+    "model": "ratings.professorstag",
+    "pk": 18,
+    "fields": {
+      "tag": "Graded By Few Things"
+    }
+  },
+  {
+    "model": "ratings.professorstag",
+    "pk": 19,
+    "fields": {
+      "tag": "Accessible Outside Class"
+    }
+  },
+  {
+    "model": "ratings.professorstag",
+    "pk": 20,
+    "fields": {
+      "tag": "Online Savvy"
+    }
+  }
+]

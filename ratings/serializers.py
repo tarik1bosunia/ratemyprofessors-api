@@ -82,7 +82,8 @@ class SchoolRatingSerializer(serializers.ModelSerializer):
 
 class ProfessorRatingSerializer(serializers.ModelSerializer):
     professor = serializers.PrimaryKeyRelatedField(queryset=Professor.objects.all())
-    tags = serializers.SlugRelatedField(many=True, queryset=ProfessorsTag.objects.all(), slug_field='tag')
+    # tags = serializers.SlugRelatedField(many=True, queryset=ProfessorsTag.objects.all(), slug_field='tag')
+    tags = serializers.PrimaryKeyRelatedField(many=True, queryset=ProfessorsTag.objects.all())
 
     class Meta:
         model = ProfessorRating

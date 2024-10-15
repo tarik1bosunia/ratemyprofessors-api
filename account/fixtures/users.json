@@ -1,0 +1,182 @@
+[
+  {
+    "model": "account.user",
+    "pk": 1,
+    "fields": {
+      "email": "johndoe@example.com",
+      "first_name": "John",
+      "last_name": "Doe",
+      "school": "University A",
+      "field_of_study": "Computer Science",
+      "is_active": true,
+      "is_staff": false,
+      "is_admin": false,
+      "created_at": "2023-01-01T10:00:00Z",
+      "updated_at": "2023-01-02T10:00:00Z",
+      "auth_provider": "email",
+      "is_email_verified": true
+    }
+  },
+  {
+    "model": "account.user",
+    "pk": 2,
+    "fields": {
+      "email": "janedoe@example.com",
+      "first_name": "Jane",
+      "last_name": "Doe",
+      "school": "University B",
+      "field_of_study": "Biology",
+      "is_active": true,
+      "is_staff": false,
+      "is_admin": false,
+      "created_at": "2023-02-01T12:00:00Z",
+      "updated_at": "2023-02-02T12:00:00Z",
+      "auth_provider": "email",
+      "is_email_verified": true
+    }
+  },
+  {
+    "model": "account.user",
+    "pk": 3,
+    "fields": {
+      "email": "mikejohnson@example.com",
+      "first_name": "Mike",
+      "last_name": "Johnson",
+      "school": "University C",
+      "field_of_study": "Mechanical Engineering",
+      "is_active": true,
+      "is_staff": false,
+      "is_admin": false,
+      "created_at": "2023-03-01T14:00:00Z",
+      "updated_at": "2023-03-02T14:00:00Z",
+      "auth_provider": "email",
+      "is_email_verified": true
+    }
+  },
+  {
+    "model": "account.user",
+    "pk": 4,
+    "fields": {
+      "email": "emilywilliams@example.com",
+      "first_name": "Emily",
+      "last_name": "Williams",
+      "school": "University D",
+      "field_of_study": "Psychology",
+      "is_active": true,
+      "is_staff": false,
+      "is_admin": false,
+      "created_at": "2023-04-01T16:00:00Z",
+      "updated_at": "2023-04-02T16:00:00Z",
+      "auth_provider": "email",
+      "is_email_verified": true
+    }
+  },
+  {
+    "model": "account.user",
+    "pk": 5,
+    "fields": {
+      "email": "paulsmith@example.com",
+      "first_name": "Paul",
+      "last_name": "Smith",
+      "school": "University E",
+      "field_of_study": "Business Administration",
+      "is_active": true,
+      "is_staff": false,
+      "is_admin": false,
+      "created_at": "2023-05-01T18:00:00Z",
+      "updated_at": "2023-05-02T18:00:00Z",
+      "auth_provider": "email",
+      "is_email_verified": true
+    }
+  },
+  {
+    "model": "account.user",
+    "pk": 6,
+    "fields": {
+      "email": "laurajones@example.com",
+      "first_name": "Laura",
+      "last_name": "Jones",
+      "school": "University F",
+      "field_of_study": "Mathematics",
+      "is_active": true,
+      "is_staff": false,
+      "is_admin": false,
+      "created_at": "2023-06-01T20:00:00Z",
+      "updated_at": "2023-06-02T20:00:00Z",
+      "auth_provider": "email",
+      "is_email_verified": true
+    }
+  },
+  {
+    "model": "account.user",
+    "pk": 7,
+    "fields": {
+      "email": "kevinbrown@example.com",
+      "first_name": "Kevin",
+      "last_name": "Brown",
+      "school": "University G",
+      "field_of_study": "Physics",
+      "is_active": true,
+      "is_staff": false,
+      "is_admin": false,
+      "created_at": "2023-07-01T22:00:00Z",
+      "updated_at": "2023-07-02T22:00:00Z",
+      "auth_provider": "email",
+      "is_email_verified": true
+    }
+  },
+  {
+    "model": "account.user",
+    "pk": 8,
+    "fields": {
+      "email": "sarahlee@example.com",
+      "first_name": "Sarah",
+      "last_name": "Lee",
+      "school": "University H",
+      "field_of_study": "Chemistry",
+      "is_active": true,
+      "is_staff": false,
+      "is_admin": false,
+      "created_at": "2023-08-01T00:00:00Z",
+      "updated_at": "2023-08-02T00:00:00Z",
+      "auth_provider": "email",
+      "is_email_verified": true
+    }
+  },
+  {
+    "model": "account.user",
+    "pk": 9,
+    "fields": {
+      "email": "davidclark@example.com",
+      "first_name": "David",
+      "last_name": "Clark",
+      "school": "University I",
+      "field_of_study": "Architecture",
+      "is_active": true,
+      "is_staff": false,
+      "is_admin": false,
+      "created_at": "2023-09-01T02:00:00Z",
+      "updated_at": "2023-09-02T02:00:00Z",
+      "auth_provider": "email",
+      "is_email_verified": true
+    }
+  },
+  {
+    "model": "account.user",
+    "pk": 10,
+    "fields": {
+      "email": "lisaroberts@example.com",
+      "first_name": "Lisa",
+      "last_name": "Roberts",
+      "school": "University J",
+      "field_of_study": "Economics",
+      "is_active": true,
+      "is_staff": false,
+      "is_admin": false,
+      "created_at": "2023-10-01T04:00:00Z",
+      "updated_at": "2023-10-02T04:00:00Z",
+      "auth_provider": "email",
+      "is_email_verified": true
+    }
+  }
+]

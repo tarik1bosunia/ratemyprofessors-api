@@ -161,6 +161,7 @@ class RateProfessorView(generics.CreateAPIView):
         except Professor.DoesNotExist:
             return Response({"error": "Professor not found"}, status=status.HTTP_404_NOT_FOUND)
 
+
         # Extract and validate request data
         data = request.data.copy()
         print(data)
@@ -171,10 +172,21 @@ class RateProfessorView(generics.CreateAPIView):
         if not all(isinstance(tag_id, int) for tag_id in tag_ids):
             return Response({"error": "Tags must be a list of integers"}, status=status.HTTP_400_BAD_REQUEST)
 
+        # Validate tags (ensure they are valid tag IDs)
+        tag_ids = data.get('tags', [])
+        if not all(isinstance(tag_id, int) for tag_id in tag_ids):
+            return Response({"error": "Tags must be a list of integers"}, status=status.HTTP_400_BAD_REQUEST)
+
         # Validate and create the ProfessorRating object
         serializer = self.get_serializer(data=data)
-        serializer.is_valid(raise_exception=True)
-        self.perform_create(serializer)
+        # serializer.is_valid(raise_exception=True)
+        # self.perform_create(serializer)
+
+        if serializer.is_valid(raise_exception=False):
+            self.perform_create(serializer)
+        else:
+            print(serializer.errors)  # Log the errors for debugging
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
         # Return the response with the created object data
         headers = self.get_success_headers(serializer.data)

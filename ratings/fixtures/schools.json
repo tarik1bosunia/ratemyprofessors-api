@@ -1,0 +1,158 @@
+[
+  {
+    "model": "ratings.school",
+    "pk": 1,
+    "fields": {
+      "name_of_school": "University of Dhaka",
+      "school_website": "https://www.du.ac.bd",
+      "location": "Dhaka, Bangladesh",
+      "country": 1,
+      "state": 5,
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.school",
+    "pk": 2,
+    "fields": {
+      "name_of_school": "Bangladesh University of Engineering and Technology (BUET)",
+      "school_website": "https://www.buet.ac.bd",
+      "location": "Dhaka, Bangladesh",
+      "country": 1,
+      "state": 5,
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.school",
+    "pk": 3,
+    "fields": {
+      "name_of_school": "Jahangirnagar University",
+      "school_website": "https://www.juniv.edu",
+      "location": "Savar, Dhaka, Bangladesh",
+      "country": 1,
+      "state": 5,
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.school",
+    "pk": 4,
+    "fields": {
+      "name_of_school": "North South University",
+      "school_website": "https://www.northsouth.edu",
+      "location": "Dhaka, Bangladesh",
+      "country": 1,
+      "state": 5,
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.school",
+    "pk": 5,
+    "fields": {
+      "name_of_school": "Chittagong University",
+      "school_website": "https://www.cu.ac.bd",
+      "location": "Chittagong, Bangladesh",
+      "country": 1,
+      "state": 6,
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.school",
+    "pk": 6,
+    "fields": {
+      "name_of_school": "Rajshahi University",
+      "school_website": "https://www.ru.ac.bd",
+      "location": "Rajshahi, Bangladesh",
+      "country": 1,
+      "state": 8,
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.school",
+    "pk": 7,
+    "fields": {
+      "name_of_school": "Khulna University",
+      "school_website": "https://www.ku.ac.bd",
+      "location": "Khulna, Bangladesh",
+      "country": 1,
+      "state": 7,
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.school",
+    "pk": 8,
+    "fields": {
+      "name_of_school": "Sylhet Agricultural University",
+      "school_website": "https://www.sau.ac.bd",
+      "location": "Sylhet, Bangladesh",
+      "country": 1,
+      "state": 10,
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.school",
+    "pk": 9,
+    "fields": {
+      "name_of_school": "Bangladesh University of Textiles",
+      "school_website": "https://www.but.edu.bd",
+      "location": "Dhaka, Bangladesh",
+      "country": 1,
+      "state": 5,
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.school",
+    "pk": 10,
+    "fields": {
+      "name_of_school": "Shahjalal University of Science and Technology (SUST)",
+      "school_website": "https://www.sust.edu",
+      "location": "Sylhet, Bangladesh",
+      "country": 1,
+      "state": 10,
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.school",
+    "pk": 11,
+    "fields": {
+      "name_of_school": "Islamic University of Technology (IUT)",
+      "school_website": "https://www.iutoic-dhaka.edu",
+      "location": "Gazipur, Bangladesh",
+      "country": 1,
+      "state": 5,
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.school",
+    "pk": 12,
+    "fields": {
+      "name_of_school": "University of Science and Technology Chittagong (USTC)",
+      "school_website": "https://www.ustc.ac.bd",
+      "location": "Chittagong, Bangladesh",
+      "country": 1,
+      "state": 6,
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.school",
+    "pk": 13,
+    "fields": {
+      "name_of_school": "Daffodil International University",
+      "school_website": "https://www.daffodilvarsity.edu.bd",
+      "location": "Dhaka, Bangladesh",
+      "country": 1,
+      "state": 5,
+      "terms_privacy": true
+    }
+  }
+]
