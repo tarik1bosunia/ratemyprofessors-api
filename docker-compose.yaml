@@ -10,6 +10,7 @@
 name: rateteachserver
 services:
   server:
+#    restart: unless-stopped
 #    image: ghcr.io/<USERNAME>/<REPO_NAME>/server:latest
     image: ghcr.io/tarik1bosunia/rtserver:latest
     container_name: rtserver-container

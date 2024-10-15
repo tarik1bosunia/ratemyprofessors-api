@@ -9,3 +9,5 @@ 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
 docker build . -t ghcr.io/tarik1bosunia/rtserver:tata
 
 docker build . -t ghcr.io/tarik1bosunia/rtserver:latest
+
+docker compose up -d --restart unless-stopped
