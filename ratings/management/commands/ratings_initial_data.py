@@ -1,10 +1,11 @@
 from django.core.management.base import BaseCommand
 from django.core.management import call_command
-from ratings.models import Country, State, Department, ProfessorsTag, SchoolRating, School
+from ratings.models import Country, State, Department, ProfessorsTag, SchoolRating, School, Professor
 
 
 class Command(BaseCommand):
-    help = "Load initial data for countries, states, departments, professor tags, School, and school ratings."
+    help = ("Load initial data for countries, states, departments, professor tags, School, school ratings., "
+            "and professors")
 
     def handle(self, *args, **kwargs):
         # Load countries
@@ -48,5 +49,12 @@ class Command(BaseCommand):
             call_command('loaddata', 'school_ratings.json')
         else:
             print("SchoolRatings data already exists. Skipping...")
+
+        # Load professor
+        if not Professor.objects.exists():
+            print("Loading Professors data...")
+            call_command('loaddata', 'professors.json')
+        else:
+            print("Professors data already exists. Skipping...")
 
         self.stdout.write(self.style.SUCCESS('Successfully loaded ratings data'))

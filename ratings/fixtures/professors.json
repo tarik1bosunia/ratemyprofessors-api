@@ -1,0 +1,422 @@
+[
+  {
+    "model": "ratings.professor",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "name_of_school": "University of Dhaka",
+      "first_name": "Aminul",
+      "middle_name": "Islam",
+      "last_name": "Chowdhury",
+      "department": 1,
+      "directory_listing_of_professor": "Senior Lecturer at University of Dhaka.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "name_of_school": "Bangladesh University of Engineering and Technology (BUET)",
+      "first_name": "Mehedi",
+      "middle_name": "Hasan",
+      "last_name": "Khan",
+      "department": 2,
+      "directory_listing_of_professor": "Associate Professor in Electrical Engineering at BUET.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 3,
+    "fields": {
+      "user": 3,
+      "name_of_school": "Jahangirnagar University",
+      "first_name": "Sadia",
+      "middle_name": "",
+      "last_name": "Rahman",
+      "department": 3,
+      "directory_listing_of_professor": "Assistant Professor in English Literature.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 4,
+    "fields": {
+      "user": 4,
+      "name_of_school": "North South University",
+      "first_name": "Nadia",
+      "middle_name": "",
+      "last_name": "Hossain",
+      "department": 4,
+      "directory_listing_of_professor": "Faculty member at North South University.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 5,
+    "fields": {
+      "user": 5,
+      "name_of_school": "Chittagong University",
+      "first_name": "Rafiq",
+      "middle_name": "Alam",
+      "last_name": "Mahmud",
+      "department": 5,
+      "directory_listing_of_professor": "Associate Professor in History.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 6,
+    "fields": {
+      "user": 6,
+      "name_of_school": "Rajshahi University",
+      "first_name": "Kabir",
+      "middle_name": "",
+      "last_name": "Chowdhury",
+      "department": 1,
+      "directory_listing_of_professor": "Lecturer in Economics at Rajshahi University.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 7,
+    "fields": {
+      "user": 7,
+      "name_of_school": "Khulna University",
+      "first_name": "Farhana",
+      "middle_name": "Yesmin",
+      "last_name": "Sheikh",
+      "department": 2,
+      "directory_listing_of_professor": "Senior Lecturer in Mathematics.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 8,
+    "fields": {
+      "user": 8,
+      "name_of_school": "Sylhet Agricultural University",
+      "first_name": "Harun",
+      "middle_name": "",
+      "last_name": "Rashid",
+      "department": 3,
+      "directory_listing_of_professor": "Professor of Agricultural Science.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 9,
+    "fields": {
+      "user": 9,
+      "name_of_school": "Bangladesh University of Textiles",
+      "first_name": "Anisur",
+      "middle_name": "Rahman",
+      "last_name": "Sikder",
+      "department": 4,
+      "directory_listing_of_professor": "Lecturer in Textile Engineering.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 10,
+    "fields": {
+      "user": 10,
+      "name_of_school": "Shahjalal University of Science and Technology (SUST)",
+      "first_name": "Shirin",
+      "middle_name": "",
+      "last_name": "Ahmed",
+      "department": 5,
+      "directory_listing_of_professor": "Professor of Computer Science.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 11,
+    "fields": {
+      "user": 11,
+      "name_of_school": "Bangabandhu Sheikh Mujibur Rahman Agricultural University",
+      "first_name": "Rafiqul",
+      "middle_name": "Islam",
+      "last_name": "Shikder",
+      "department": 1,
+      "directory_listing_of_professor": "Professor of Agronomy.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 12,
+    "fields": {
+      "user": 12,
+      "name_of_school": "Daffodil International University",
+      "first_name": "Tariq",
+      "middle_name": "Ahsan",
+      "last_name": "Khan",
+      "department": 2,
+      "directory_listing_of_professor": "Assistant Professor in Business Administration.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 13,
+    "fields": {
+      "user": 13,
+      "name_of_school": "East West University",
+      "first_name": "Nabila",
+      "middle_name": "",
+      "last_name": "Siddique",
+      "department": 3,
+      "directory_listing_of_professor": "Senior Lecturer in Sociology.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 14,
+    "fields": {
+      "user": 14,
+      "name_of_school": "United International University",
+      "first_name": "Moinul",
+      "middle_name": "",
+      "last_name": "Islam",
+      "department": 4,
+      "directory_listing_of_professor": "Professor of Computer Science.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 15,
+    "fields": {
+      "user": 15,
+      "name_of_school": "BRAC University",
+      "first_name": "Sami",
+      "middle_name": "Ullah",
+      "last_name": "Hossain",
+      "department": 5,
+      "directory_listing_of_professor": "Associate Professor in Environmental Science.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 16,
+    "fields": {
+      "user": 16,
+      "name_of_school": "Asian University for Women",
+      "first_name": "Anwara",
+      "middle_name": "Begum",
+      "last_name": "Mitra",
+      "department": 1,
+      "directory_listing_of_professor": "Lecturer in Political Science.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 17,
+    "fields": {
+      "user": 17,
+      "name_of_school": "Chittagong Veterinary and Animal Sciences University",
+      "first_name": "Jashim",
+      "middle_name": "Uddin",
+      "last_name": "Akhand",
+      "department": 2,
+      "directory_listing_of_professor": "Professor of Veterinary Medicine.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 18,
+    "fields": {
+      "user": 18,
+      "name_of_school": "Bangladesh Agricultural University",
+      "first_name": "Rehana",
+      "middle_name": "",
+      "last_name": "Hossain",
+      "department": 3,
+      "directory_listing_of_professor": "Senior Lecturer in Food Science.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 19,
+    "fields": {
+      "user": 19,
+      "name_of_school": "National University of Bangladesh",
+      "first_name": "Saiful",
+      "middle_name": "",
+      "last_name": "Islam",
+      "department": 4,
+      "directory_listing_of_professor": "Assistant Professor in Mathematics.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 20,
+    "fields": {
+      "user": 20,
+      "name_of_school": "Shanto-Mariam University of Creative Technology",
+      "first_name": "Rina",
+      "middle_name": "Rani",
+      "last_name": "Nandi",
+      "department": 5,
+      "directory_listing_of_professor": "Lecturer in Fine Arts.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 21,
+    "fields": {
+      "user": 21,
+      "name_of_school": "Bangladesh University of Health Sciences",
+      "first_name": "Aziz",
+      "middle_name": "",
+      "last_name": "Akhter",
+      "department": 1,
+      "directory_listing_of_professor": "Professor of Public Health.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 22,
+    "fields": {
+      "user": 22,
+      "name_of_school": "Pabna University of Science and Technology",
+      "first_name": "Rabiul",
+      "middle_name": "Nabi",
+      "last_name": "Sheikh",
+      "department": 2,
+      "directory_listing_of_professor": "Senior Lecturer in Computer Science.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 23,
+    "fields": {
+      "user": 23,
+      "name_of_school": "Bangladesh Institute of Management",
+      "first_name": "Shahidul",
+      "middle_name": "",
+      "last_name": "Hoque",
+      "department": 3,
+      "directory_listing_of_professor": "Associate Professor in Management.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 24,
+    "fields": {
+      "user": 24,
+      "name_of_school": "International University of Business Agriculture and Technology",
+      "first_name": "Fazle",
+      "middle_name": "Rabbi",
+      "last_name": "Jewel",
+      "department": 4,
+      "directory_listing_of_professor": "Lecturer in Business Management.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 25,
+    "fields": {
+      "user": 25,
+      "name_of_school": "Uttara University",
+      "first_name": "Anwar",
+      "middle_name": "",
+      "last_name": "Hossain",
+      "department": 5,
+      "directory_listing_of_professor": "Professor of Civil Engineering.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 26,
+    "fields": {
+      "user": 26,
+      "name_of_school": "The University of Asia Pacific",
+      "first_name": "Sujon",
+      "middle_name": "",
+      "last_name": "Khan",
+      "department": 1,
+      "directory_listing_of_professor": "Assistant Professor in Telecommunications.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 27,
+    "fields": {
+      "user": 27,
+      "name_of_school": "Asian University of Bangladesh",
+      "first_name": "Nasrin",
+      "middle_name": "",
+      "last_name": "Akter",
+      "department": 2,
+      "directory_listing_of_professor": "Senior Lecturer in Business.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 28,
+    "fields": {
+      "user": 28,
+      "name_of_school": "Bengal Institute of Technology and Management",
+      "first_name": "Shahid",
+      "middle_name": "Hossain",
+      "last_name": "Khan",
+      "department": 3,
+      "directory_listing_of_professor": "Senior Lecturer in Computer Engineering.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 29,
+    "fields": {
+      "user": 29,
+      "name_of_school": "Dhaka International University",
+      "first_name": "Sakib",
+      "middle_name": "",
+      "last_name": "Rahman",
+      "department": 4,
+      "directory_listing_of_professor": "Assistant Professor in Environmental Studies.",
+      "terms_privacy": true
+    }
+  },
+  {
+    "model": "ratings.professor",
+    "pk": 30,
+    "fields": {
+      "user": 30,
+      "name_of_school": "Green University of Bangladesh",
+      "first_name": "Tanjina",
+      "middle_name": "Jahan",
+      "last_name": "Sultana",
+      "department": 5,
+      "directory_listing_of_professor": "Lecturer in Business Administration.",
+      "terms_privacy": true
+    }
+  }
+]
