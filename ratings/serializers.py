@@ -107,3 +107,9 @@ class SimilarProfessorSerializer(serializers.ModelSerializer):
         if ratings.exists():
             return ratings.aggregate(Avg('rating'))['rating__avg']
         return None
+
+
+class CourseCodeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProfessorRating
+        fields = ['course_code']

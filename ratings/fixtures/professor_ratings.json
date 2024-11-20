@@ -1,0 +1,403 @@
+[
+    {
+        "model": "ratings.professorrating",
+        "pk": 1,
+        "fields": {
+            "professor": 1,
+            "course_code": "CSC101",
+            "is_online_course": true,
+            "rating": 1,
+            "difficulty": 1,
+            "is_take_professor_again": true,
+            "was_class_taken_for_credit": true,
+            "was_use_textbook": true,
+            "was_attendance_mandatory": true,
+            "grade": "A",
+            "tags": [1, 2],
+            "comment": "Sample review comment for course CSC101.",
+            "created_at": "2024-01-01"
+        }
+    },
+    {
+        "model": "ratings.professorrating",
+        "pk": 2,
+        "fields": {
+            "professor": 2,
+            "course_code": "CSC102",
+            "is_online_course": false,
+            "rating": 2,
+            "difficulty": 2,
+            "is_take_professor_again": false,
+            "was_class_taken_for_credit": false,
+            "was_use_textbook": false,
+            "was_attendance_mandatory": false,
+            "grade": "B",
+            "tags": [2, 3],
+            "comment": "Sample review comment for course CSC102.",
+            "created_at": "2024-01-02"
+        }
+    },
+    {
+        "model": "ratings.professorrating",
+        "pk": 3,
+        "fields": {
+            "professor": 3,
+            "course_code": "CSC103",
+            "is_online_course": true,
+            "rating": 3,
+            "difficulty": 3,
+            "is_take_professor_again": true,
+            "was_class_taken_for_credit": false,
+            "was_use_textbook": false,
+            "was_attendance_mandatory": false,
+            "grade": "C",
+            "tags": [3, 4],
+            "comment": "Sample review comment for course CSC103.",
+            "created_at": "2024-01-03"
+        }
+    },
+    {
+        "model": "ratings.professorrating",
+        "pk": 4,
+        "fields": {
+            "professor": 4,
+            "course_code": "CSC104",
+            "is_online_course": false,
+            "rating": 4,
+            "difficulty": 4,
+            "is_take_professor_again": false,
+            "was_class_taken_for_credit": true,
+            "was_use_textbook": true,
+            "was_attendance_mandatory": true,
+            "grade": "A",
+            "tags": [4, 5],
+            "comment": "Sample review comment for course CSC104.",
+            "created_at": "2024-01-04"
+        }
+    },
+    {
+        "model": "ratings.professorrating",
+        "pk": 5,
+        "fields": {
+            "professor": 5,
+            "course_code": "CSC105",
+            "is_online_course": true,
+            "rating": 5,
+            "difficulty": 5,
+            "is_take_professor_again": true,
+            "was_class_taken_for_credit": false,
+            "was_use_textbook": false,
+            "was_attendance_mandatory": false,
+            "grade": "B",
+            "tags": [5, 6],
+            "comment": "Sample review comment for course CSC105.",
+            "created_at": "2024-01-05"
+        }
+    },
+    {
+        "model": "ratings.professorrating",
+        "pk": 6,
+        "fields": {
+            "professor": 6,
+            "course_code": "CSC106",
+            "is_online_course": false,
+            "rating": 1,
+            "difficulty": 6,
+            "is_take_professor_again": false,
+            "was_class_taken_for_credit": true,
+            "was_use_textbook": true,
+            "was_attendance_mandatory": true,
+            "grade": "C",
+            "tags": [6, 7],
+            "comment": "Sample review comment for course CSC106.",
+            "created_at": "2024-01-06"
+        }
+    },
+    {
+        "model": "ratings.professorrating",
+        "pk": 7,
+        "fields": {
+            "professor": 7,
+            "course_code": "CSC107",
+            "is_online_course": true,
+            "rating": 2,
+            "difficulty": 7,
+            "is_take_professor_again": true,
+            "was_class_taken_for_credit": false,
+            "was_use_textbook": false,
+            "was_attendance_mandatory": false,
+            "grade": "A",
+            "tags": [7, 8],
+            "comment": "Sample review comment for course CSC107.",
+            "created_at": "2024-01-07"
+        }
+    },
+    {
+        "model": "ratings.professorrating",
+        "pk": 8,
+        "fields": {
+            "professor": 8,
+            "course_code": "CSC108",
+            "is_online_course": false,
+            "rating": 3,
+            "difficulty": 8,
+            "is_take_professor_again": false,
+            "was_class_taken_for_credit": true,
+            "was_use_textbook": true,
+            "was_attendance_mandatory": true,
+            "grade": "B",
+            "tags": [8, 9],
+            "comment": "Sample review comment for course CSC108.",
+            "created_at": "2024-01-08"
+        }
+    },
+    {
+        "model": "ratings.professorrating",
+        "pk": 9,
+        "fields": {
+            "professor": 9,
+            "course_code": "CSC109",
+            "is_online_course": true,
+            "rating": 4,
+            "difficulty": 9,
+            "is_take_professor_again": true,
+            "was_class_taken_for_credit": false,
+            "was_use_textbook": false,
+            "was_attendance_mandatory": false,
+            "grade": "C",
+            "tags": [9, 10],
+            "comment": "Sample review comment for course CSC109.",
+            "created_at": "2024-01-09"
+        }
+    },
+    {
+        "model": "ratings.professorrating",
+        "pk": 10,
+        "fields": {
+            "professor": 10,
+            "course_code": "CSC110",
+            "is_online_course": false,
+            "rating": 5,
+            "difficulty": 10,
+            "is_take_professor_again": false,
+            "was_class_taken_for_credit": true,
+            "was_use_textbook": true,
+            "was_attendance_mandatory": true,
+            "grade": "A",
+            "tags": [10, 1],
+            "comment": "Sample review comment for course CSC110.",
+            "created_at": "2024-01-10"
+        }
+    },
+    {
+        "model": "ratings.professorrating",
+        "pk": 11,
+        "fields": {
+            "professor": 11,
+            "course_code": "CSC111",
+            "is_online_course": true,
+            "rating": 1,
+            "difficulty": 1,
+            "is_take_professor_again": true,
+            "was_class_taken_for_credit": false,
+            "was_use_textbook": false,
+            "was_attendance_mandatory": false,
+            "grade": "B",
+            "tags": [1, 2],
+            "comment": "Sample review comment for course CSC111.",
+            "created_at": "2024-01-11"
+        }
+    },
+    {
+        "model": "ratings.professorrating",
+        "pk": 12,
+        "fields": {
+            "professor": 12,
+            "course_code": "CSC112",
+            "is_online_course": false,
+            "rating": 2,
+            "difficulty": 2,
+            "is_take_professor_again": false,
+            "was_class_taken_for_credit": true,
+            "was_use_textbook": true,
+            "was_attendance_mandatory": true,
+            "grade": "C",
+            "tags": [2, 3],
+            "comment": "Sample review comment for course CSC112.",
+            "created_at": "2024-01-12"
+        }
+    },
+        {
+        "model": "ratings.professorrating",
+        "pk": 13,
+        "fields": {
+            "professor": 1,
+            "course_code": "CSC101",
+            "is_online_course": true,
+            "rating": 1,
+            "difficulty": 1,
+            "is_take_professor_again": true,
+            "was_class_taken_for_credit": true,
+            "was_use_textbook": true,
+            "was_attendance_mandatory": true,
+            "grade": "A",
+            "tags": [1, 2],
+            "comment": "Sample review comment for course CSC101.",
+            "created_at": "2024-01-01"
+        }
+    },
+
+        {
+        "model": "ratings.professorrating",
+        "pk": 14,
+        "fields": {
+            "professor": 1,
+            "course_code": "CSC101",
+            "is_online_course": true,
+            "rating": 1,
+            "difficulty": 1,
+            "is_take_professor_again": true,
+            "was_class_taken_for_credit": true,
+            "was_use_textbook": true,
+            "was_attendance_mandatory": true,
+            "grade": "A",
+            "tags": [1, 2],
+            "comment": "Sample review comment for course CSC101.",
+            "created_at": "2024-01-01"
+        }
+    },
+
+        {
+        "model": "ratings.professorrating",
+        "pk": 15,
+        "fields": {
+            "professor": 1,
+            "course_code": "CSC101",
+            "is_online_course": true,
+            "rating": 1,
+            "difficulty": 1,
+            "is_take_professor_again": true,
+            "was_class_taken_for_credit": true,
+            "was_use_textbook": true,
+            "was_attendance_mandatory": true,
+            "grade": "A",
+            "tags": [1, 2],
+            "comment": "Sample review comment for course CSC101.",
+            "created_at": "2024-01-01"
+        }
+    },
+        {
+        "model": "ratings.professorrating",
+        "pk": 16,
+        "fields": {
+            "professor": 1,
+            "course_code": "CSC101",
+            "is_online_course": true,
+            "rating": 1,
+            "difficulty": 1,
+            "is_take_professor_again": true,
+            "was_class_taken_for_credit": true,
+            "was_use_textbook": true,
+            "was_attendance_mandatory": true,
+            "grade": "A",
+            "tags": [1, 2],
+            "comment": "Sample review comment for course CSC101.",
+            "created_at": "2024-01-01"
+        }
+    },
+        {
+        "model": "ratings.professorrating",
+        "pk": 17,
+        "fields": {
+            "professor": 1,
+            "course_code": "CSC101",
+            "is_online_course": true,
+            "rating": 1,
+            "difficulty": 1,
+            "is_take_professor_again": true,
+            "was_class_taken_for_credit": true,
+            "was_use_textbook": true,
+            "was_attendance_mandatory": true,
+            "grade": "A",
+            "tags": [1, 2],
+            "comment": "Sample review comment for course CSC101.",
+            "created_at": "2024-01-01"
+        }
+    },
+        {
+        "model": "ratings.professorrating",
+        "pk": 18,
+        "fields": {
+            "professor": 1,
+            "course_code": "CSC101",
+            "is_online_course": true,
+            "rating": 1,
+            "difficulty": 1,
+            "is_take_professor_again": true,
+            "was_class_taken_for_credit": true,
+            "was_use_textbook": true,
+            "was_attendance_mandatory": true,
+            "grade": "A",
+            "tags": [1, 2],
+            "comment": "Sample review comment for course CSC101.",
+            "created_at": "2024-01-01"
+        }
+    },
+        {
+        "model": "ratings.professorrating",
+        "pk": 18,
+        "fields": {
+            "professor": 1,
+            "course_code": "CSC101",
+            "is_online_course": true,
+            "rating": 1,
+            "difficulty": 1,
+            "is_take_professor_again": true,
+            "was_class_taken_for_credit": true,
+            "was_use_textbook": true,
+            "was_attendance_mandatory": true,
+            "grade": "A",
+            "tags": [1, 2],
+            "comment": "Sample review comment for course CSC101.",
+            "created_at": "2024-01-01"
+        }
+    },
+        {
+        "model": "ratings.professorrating",
+        "pk": 19,
+        "fields": {
+            "professor": 1,
+            "course_code": "HI101",
+            "is_online_course": true,
+            "rating": 1,
+            "difficulty": 1,
+            "is_take_professor_again": true,
+            "was_class_taken_for_credit": true,
+            "was_use_textbook": true,
+            "was_attendance_mandatory": true,
+            "grade": "A",
+            "tags": [1, 2],
+            "comment": "Sample review comment for course HI101.",
+            "created_at": "2024-01-01"
+        }
+    },
+        {
+        "model": "ratings.professorrating",
+        "pk": 20,
+        "fields": {
+            "professor": 1,
+            "course_code": "CSC101",
+            "is_online_course": true,
+            "rating": 1,
+            "difficulty": 1,
+            "is_take_professor_again": true,
+            "was_class_taken_for_credit": true,
+            "was_use_textbook": true,
+            "was_attendance_mandatory": true,
+            "grade": "A",
+            "tags": [1, 2],
+            "comment": "Sample review comment for course CSC101.",
+            "created_at": "2024-01-01"
+        }
+    }
+]

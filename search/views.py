@@ -8,7 +8,7 @@ from ratings.serializers import ProfessorSerializer, SchoolSerializer
 
 class ProfessorSearchAPIView(generics.ListAPIView):
     serializer_class = ProfessorSerializer
-    queryset = Professor.objects.all()
+    queryset = Professor.objects.all().order_by('id')
     filter_backends = [SearchFilter]
     search_fields = ['first_name', 'last_name', 'middle_name', 'name_of_school', 'department__name']
     pagination_class = SearchPageNumberPagination

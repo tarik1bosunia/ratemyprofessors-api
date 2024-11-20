@@ -4,13 +4,15 @@ from rest_framework import viewsets, status
 from rest_framework.exceptions import NotFound
 from rest_framework.generics import get_object_or_404
 from rest_framework.views import APIView
+from rest_framework.filters import SearchFilter
 
 from .models import Professor, Course, Rating, Feedback, ProfessorsTag, School, State, Country, Department, \
     SchoolRating, ProfessorRating
+from .pagination import RatingsPageNumberPagination
 from .serializers import ProfessorSerializer, CourseSerializer, RatingSerializer, FeedbackSerializer, \
     ProfessorsTagSerializer, \
     SchoolSerializer, CountrySerializer, StateSerializer, DepartmentSerializer, SchoolRatingSerializer, \
-    ProfessorRatingSerializer, SimilarProfessorSerializer
+    ProfessorRatingSerializer, SimilarProfessorSerializer, CourseCodeSerializer
 
 from rest_framework import generics, pagination
 from rest_framework.permissions import IsAuthenticated, AllowAny, IsAuthenticatedOrReadOnly
@@ -50,6 +52,7 @@ class ProfessorCreateAPIView(generics.CreateAPIView):
         if 'department' not in request.data:
             print("Department is missing from request data")
         return super().create(request, *args, **kwargs)
+
 
 class CourseViewSet(viewsets.ModelViewSet):
     queryset = Course.objects.all()
@@ -119,6 +122,7 @@ class DepartmentViewSet(viewsets.ModelViewSet):
 
 
 class SchoolRatingAPIView(APIView):
+
     def get_permissions(self):
         if self.request.method == 'GET':
             permission_classes = [AllowAny]
@@ -127,14 +131,23 @@ class SchoolRatingAPIView(APIView):
         return [permission() for permission in permission_classes]
 
     def get(self, request, school_id, rating_id=None):
+
         if rating_id:
             rating = get_object_or_404(SchoolRating, id=rating_id, school_id=school_id)
             serializer = SchoolRatingSerializer(rating)
             return Response(serializer.data)
         else:
             ratings = SchoolRating.objects.filter(school_id=school_id)
-            serializer = SchoolRatingSerializer(ratings, many=True)
-            return Response(serializer.data)
+            # serializer = SchoolRatingSerializer(ratings, many=True)
+            #
+            # return Response(serializer.data)
+
+            # Use your custom paginator
+            paginator = RatingsPageNumberPagination()
+            paginated_ratings = paginator.paginate_queryset(ratings, request, view=self)
+
+            serializer = SchoolRatingSerializer(paginated_ratings, many=True)
+            return paginator.get_paginated_response(serializer.data)
 
     def post(self, request, school_id):
         data = request.data
@@ -160,7 +173,6 @@ class RateProfessorView(generics.CreateAPIView):
             professor = Professor.objects.get(id=professor_id)
         except Professor.DoesNotExist:
             return Response({"error": "Professor not found"}, status=status.HTTP_404_NOT_FOUND)
-
 
         # Extract and validate request data
         data = request.data.copy()
@@ -191,6 +203,24 @@ class RateProfessorView(generics.CreateAPIView):
         # Return the response with the created object data
         headers = self.get_success_headers(serializer.data)
         return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+
+def get_attendance_counts(professor_id):
+    attendance_counts = ProfessorRating.objects.filter(professor__id=professor_id).aggregate(
+        mandatory=Count('id', filter=Q(was_attendance_mandatory=True)),
+        not_mandatory=Count('id', filter=Q(was_attendance_mandatory=False)),
+        none=Count('id', filter=Q(was_attendance_mandatory__isnull=True)),
+    )
+    return attendance_counts
+
+
+def get_credit_counts(professor_id):
+    credit_counts = ProfessorRating.objects.filter(professor__id=professor_id).aggregate(
+        for_credit=Count('id', filter=Q(was_class_taken_for_credit=True)),
+        not_for_credit=Count('id', filter=Q(was_class_taken_for_credit=False)),
+        none=Count('id', filter=Q(was_class_taken_for_credit__isnull=True))
+    )
+    return credit_counts
 
 
 # get a professor ratings by his/her id
@@ -224,9 +254,9 @@ class ProfessorRatingsView(generics.ListAPIView):
         avg_difficulty = queryset.aggregate(Avg('difficulty'))['difficulty__avg']
 
         # Get the top 5 most common tags
-        top_tags = ProfessorRating.objects.filter(professor__id=self.kwargs.get('professor_id')).values('tags__tag')\
-            .annotate(tag_count=Count('tags'))\
-            .order_by('-tag_count')[:5]
+        top_tags = ProfessorRating.objects.filter(professor__id=self.kwargs.get('professor_id')).values('tags__tag') \
+                       .annotate(tag_count=Count('tags')) \
+                       .order_by('-tag_count')[:5]
 
         # Count how many times each rating appears
         rating_counts = queryset.values('rating').annotate(count=Count('rating')).order_by('rating')
@@ -238,21 +268,45 @@ class ProfessorRatingsView(generics.ListAPIView):
         professor = Professor.objects.get(id=self.kwargs.get('professor_id'))
         professor_serializer = ProfessorSerializer(professor)
 
-        # Serialize the data
-        serializer = self.get_serializer(queryset, many=True)
-
         # Return the serialized data along with the count
         return Response({
             "professor": professor_serializer.data,
-            "ratings": serializer.data,
             "total_ratings_count": total_ratings_count,
-            "take_again_count": take_again_count,
             "avg_difficulty": f"{avg_difficulty:.2f}" if avg_difficulty is not None else "N/A",
             "top_tags": list(top_tags),
             "rating_counts": list(rating_counts),
             "take_again_percentage": take_again_percentage,
-
+            "attendance_counts": get_attendance_counts(professor_id=self.kwargs.get('professor_id')),
+            "credit_counts": get_credit_counts(professor_id=self.kwargs.get('professor_id')),
         })
+
+
+class GetProfessorRatingsView(generics.ListAPIView):
+    serializer_class = ProfessorRatingSerializer
+    pagination_class = RatingsPageNumberPagination
+    filter_backends = [SearchFilter]
+    search_fields = ['course_code']
+
+    def get_queryset(self):
+        # Extract the professor_id from the URL
+        professor_id = self.kwargs.get('professor_id')
+
+        # Ensure the professor exists
+        try:
+            professor = Professor.objects.get(id=professor_id)
+        except Professor.DoesNotExist:
+            return Response({"error": "Professor not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        # Return all ratings for the professor
+        return ProfessorRating.objects.filter(professor=professor)
+
+
+class CourseCodesByProfessorView(APIView):
+    def get(self, request, professor_id):
+        course_codes = (ProfessorRating.objects.filter(professor_id=professor_id)
+                        .values_list('course_code', flat=True)
+                        .distinct())
+        return Response(list(course_codes), status=status.HTTP_200_OK)
 
 
 class SimilarProfessorsView(generics.ListAPIView):
@@ -263,3 +317,29 @@ class SimilarProfessorsView(generics.ListAPIView):
         professor = get_object_or_404(Professor, id=professor_id)
         # Get professors in the same department, excluding the current professor
         return Professor.objects.filter(department=professor.department).exclude(id=professor_id)
+
+
+class GetAverageRatingSchool(APIView):
+    def get(self, request, school_id):
+        # Retrieve ratings for the specified school
+        ratings = SchoolRating.objects.filter(school_id=school_id)
+
+        if not ratings.exists():
+            return Response({"detail": "No ratings found for this school."}, status=status.HTTP_404_NOT_FOUND)
+
+        # Calculate averages for each rating field
+        averages = ratings.aggregate(
+            reputation=Avg('reputation'),
+            facilities=Avg('facilities'),
+            internet=Avg('internet'),
+            food=Avg('food'),
+            clubs=Avg('clubs'),
+            social=Avg('social'),
+            happiness=Avg('happiness'),
+            safety=Avg('safety')
+        )
+
+        # Include the count of ratings
+        averages['total_ratings'] = ratings.count()
+
+        return Response(averages, status=status.HTTP_200_OK)

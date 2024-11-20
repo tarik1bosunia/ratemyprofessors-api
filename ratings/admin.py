@@ -77,7 +77,7 @@ class SchoolRatingAdmin(admin.ModelAdmin):
 
 @admin.register(ProfessorRating)
 class ProfessorRatingAdmin(admin.ModelAdmin):
-    list_display = ('professor', 'course_code', 'rating', 'difficulty', 'is_online_course', 'is_take_professor_again')
+    list_display = ('id', 'professor', 'course_code', 'rating', 'difficulty', 'is_online_course', 'is_take_professor_again')
     search_fields = ('professor__first_name', 'professor__last_name', 'course_code', 'comment')
     list_filter = ('rating', 'difficulty', 'is_online_course', 'is_take_professor_again')
 

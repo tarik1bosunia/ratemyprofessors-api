@@ -358,5 +358,113 @@
       "comment": "Good professors and resources.",
       "created_at": "2024-04-20T12:00:00Z"
     }
+  },
+    {
+    "model": "ratings.schoolrating",
+    "pk": 21,
+    "fields": {
+      "school": 1,
+      "user": 2,
+      "reputation": 4,
+      "facilities": 4,
+      "internet": 3,
+      "food": 3,
+      "clubs": 2,
+      "social": 3,
+      "happiness": 4,
+      "safety": 4,
+      "comment": "Great learning experience.",
+      "created_at": "2024-01-15T12:00:00Z"
+    }
+  },
+    {
+    "model": "ratings.schoolrating",
+    "pk": 22,
+    "fields": {
+      "school": 1,
+      "user": 3,
+      "reputation": 4,
+      "facilities": 4,
+      "internet": 3,
+      "food": 3,
+      "clubs": 2,
+      "social": 3,
+      "happiness": 4,
+      "safety": 4,
+      "comment": "Great learning experience.",
+      "created_at": "2024-01-15T12:00:00Z"
+    }
+  },
+    {
+    "model": "ratings.schoolrating",
+    "pk": 23,
+    "fields": {
+      "school": 1,
+      "user": 4,
+      "reputation": 4,
+      "facilities": 4,
+      "internet": 3,
+      "food": 3,
+      "clubs": 2,
+      "social": 3,
+      "happiness": 4,
+      "safety": 4,
+      "comment": "Great learning experience.",
+      "created_at": "2024-01-15T12:00:00Z"
+    }
+  },
+    {
+    "model": "ratings.schoolrating",
+    "pk": 24,
+    "fields": {
+      "school": 1,
+      "user": 5,
+      "reputation": 4,
+      "facilities": 4,
+      "internet": 3,
+      "food": 3,
+      "clubs": 2,
+      "social": 3,
+      "happiness": 4,
+      "safety": 4,
+      "comment": "Great learning experience.",
+      "created_at": "2024-01-15T12:00:00Z"
+    }
+  },
+    {
+    "model": "ratings.schoolrating",
+    "pk": 25,
+    "fields": {
+      "school": 1,
+      "user": 6,
+      "reputation": 4,
+      "facilities": 4,
+      "internet": 3,
+      "food": 3,
+      "clubs": 2,
+      "social": 3,
+      "happiness": 4,
+      "safety": 4,
+      "comment": "Great learning experience.",
+      "created_at": "2024-01-15T12:00:00Z"
+    }
+  },
+    {
+    "model": "ratings.schoolrating",
+    "pk": 26,
+    "fields": {
+      "school": 1,
+      "user": 7,
+      "reputation": 4,
+      "facilities": 4,
+      "internet": 3,
+      "food": 3,
+      "clubs": 2,
+      "social": 3,
+      "happiness": 4,
+      "safety": 4,
+      "comment": "Great learning experience.",
+      "created_at": "2024-01-15T12:00:00Z"
+    }
   }
 ]
