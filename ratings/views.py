@@ -339,6 +339,11 @@ class GetAverageRatingSchool(APIView):
             safety=Avg('safety')
         )
 
+        # Round each average to 1 decimal place
+        for key in averages:
+            if averages[key] is not None:  # Check if average exists (to avoid errors with None values)
+                averages[key] = round(averages[key], 1)
+
         # Include the count of ratings
         averages['total_ratings'] = ratings.count()
 
