@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-_=yyzx72vvzwrngajm&p@i4o5gqckk#0t*(xy9o_nk!9s-%yi(
 DEBUG = True
 
 ALLOWED_HOSTS = ['ratemyprofessor.ru.ac.bd', 'apirateteach.ru.ac.bd', 'rateteach.ru.ac.bd', '103.99.176.145', '127.0.0.1', 'localhost' ]
-CSRF_TRUSTED_ORIGINS = ['https://ratemyprofessor.ru.ac.bd', 'https://apirateteach.ru.ac.bd', ]
+CSRF_TRUSTED_ORIGINS = ['https://ratemyprofessor.ru.ac.bd','https://rateteach.ru.ac.bd', 'https://apirateteach.ru.ac.bd', ]
 
 
 # Application definition
@@ -255,6 +255,7 @@ PASSWORD_RESET_TIMEOUT = 900        # 900 sec = 15 min
 
 CORS_ALLOWED_ORIGINS = [
     "https://ratemyprofessor.ru.ac.bd",
+    "https://rateteach.ru.ac.bd",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
 ]
