@@ -1,4 +1,4 @@
-# Django REST API Setup for RateMyProfessors
+# RateTeach API
 
 A professional Django REST API backend with PostgreSQL, JWT authentication, Google OAuth integration, and enhanced search using Trigram Similarity.
 
