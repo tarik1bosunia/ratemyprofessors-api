@@ -1,6 +1,10 @@
-# Django REST Framework Setup
+# Django REST API Setup for RateMyProfessors
 
-## Install Required Packages
+A professional Django REST API backend with PostgreSQL, JWT authentication, Google OAuth integration, and enhanced search using Trigram Similarity.
+
+## Django REST Framework Setup
+
+### Install Required Packages
 ```sh
 pip install djangorestframework
 pip install djangorestframework-simplejwt
