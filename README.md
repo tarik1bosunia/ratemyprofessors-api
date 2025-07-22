@@ -76,3 +76,9 @@ pip install --upgrade google-auth google-auth-oauthlib google-auth-httplib2
 ## Load Additional Content Data
 ```sh
 python manage.py loaddata content_initial_data.json
+
+
+## Additional Resources
+
+- [DRF + JWT](https://django-rest-framework-simplejwt.readthedocs.io/)
+- [DRF + Elasticsearch](https://testdriven.io/blog/django-drf-elasticsearch/)
